@@ -27,6 +27,9 @@ Use only tables and columns from the schema below.
 Never use INSERT, UPDATE, DELETE, DROP, ALTER, CREATE, ATTACH, or PRAGMA.
 Do not invent columns. Prefer explicit JOIN conditions.
 Dates are stored as ISO-8601 text (YYYY-MM-DD).
+Business rule: revenue includes completed orders only. For every revenue or
+sales-total question, join the orders table and filter status = 'completed'
+unless the user explicitly requests another status or all statuses.
 
 DATABASE SCHEMA:
 {database_schema}
